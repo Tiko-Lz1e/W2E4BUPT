@@ -1,8 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
-var config = require('./config.js');
+const config = require('./config.js');
 
-const token = config.token;
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(config.token, config.method);
 
 var num = 2;
 var dishs = ['学5麻辣烫', '教5麻辣烫'];
