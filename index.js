@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-var config = require('./config');
+var config = require('./config.js');
 
 const token = config.token;
 const bot = new TelegramBot(token, {polling: true});
@@ -123,10 +123,10 @@ bot.on("callback_query", function(callbackQuery) {
 	var answer = '';
 	if(choice >= 0){
 		ChooseNum += 1;
-		console.log(choice);
-		DishesChoose[choice] += 1;
+		console.log(action);
+		DishesChoose[action] += 1;
 		answer = 'OK! We will eat ';
-		answer += dishs[choice];
+		answer += dishs[action];
 		answer += ' today!';
 		choice = -1;
 	}
